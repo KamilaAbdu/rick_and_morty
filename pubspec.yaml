@@ -14,6 +14,7 @@ dependencies:
   build_runner: ^2.4.15
   get_it: ^8.0.3
   dio: ^5.8.0+1
+  shared_preferences: ^2.5.2
 
 dev_dependencies:
   flutter_test:

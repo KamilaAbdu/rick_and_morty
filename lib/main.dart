@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:rick_and_morty/core/service/auto_router.dart';
-import 'package:rick_and_morty/core/service/di.dart' as di;
+import 'package:rick_and_morty/core/service/di.dart' as get_it;
 
-final getIt = GetIt.instance;
+final di = GetIt.instance;
 
 void main() {
-  di.setup(di:getIt);
+  get_it.setup(di:di);
   runApp(RickAndMortyApp());
 }
 
