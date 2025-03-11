@@ -20,6 +20,8 @@ dependencies:
     sdk: flutter
   intl_utils: ^2.8.10
   provider: ^6.1.2
+  logger: ^2.5.0
+  flutter_bloc: ^9.1.0
 
 dev_dependencies:
   flutter_test:
