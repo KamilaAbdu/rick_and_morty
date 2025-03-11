@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
+import 'package:provider/provider.dart';
+import 'package:rick_and_morty/core/l10n/generated/l10n.dart';
 import 'package:rick_and_morty/core/service/auto_router.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:rick_and_morty/core/service/di.dart' as get_it;
+import 'package:rick_and_morty/core/theme/localization_provider.dart';
 
 final di = GetIt.instance;
 
 void main() {
-  get_it.setup(di:di);
+  get_it.setup(di: di);
   runApp(RickAndMortyApp());
 }
 
@@ -18,19 +21,32 @@ class RickAndMortyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      localizationsDelegates: [
-    GlobalMaterialLocalizations.delegate,
-    GlobalWidgetsLocalizations.delegate,
-    GlobalCupertinoLocalizations.delegate,
-  ],
-  supportedLocales: const [
-    Locale('ky'), 
-    Locale('en'), 
-    Locale('ru'), 
-  ],
-      routerConfig: _appRouter.config(),
-      debugShowCheckedModeBanner: false,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => LocalizationProvider()),
+      ],
+      child: Consumer<LocalizationProvider>(
+        builder: (context, localizationProvider, child) {
+          return MaterialApp.router(
+            locale: localizationProvider.currentLocale, 
+            localizationsDelegates: [
+              L10ns.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+            ],
+            supportedLocales: const [
+              Locale('ky'),
+              Locale('en'),
+              Locale('ru'),
+            ],
+            routerConfig: _appRouter.config(),
+            debugShowCheckedModeBanner: false,
+          );
+        },
+      ),
     );
   }
 }
+
+
