@@ -10,7 +10,7 @@ class AllCharactersRepositoryImpl extends AllCharacterRepository {
     : _dataSource = dataSource;
 
   @override
-  Future<CharacterEntity> fetchAllCharacters() {
+  Future<AllCharactersEntity> fetchAllCharacters() {
     return _dataSource.fetchAllCharacters();
   }
 }
