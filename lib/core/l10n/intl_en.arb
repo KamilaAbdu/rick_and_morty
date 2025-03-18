@@ -1,4 +1,6 @@
 {
     "@@locale": "en",
-    "rickAndMorty": "Rick and Morty"
+    "rickAndMorty": "Rick and Morty",
+    "allCharacters" : "Total characters"
+
 }

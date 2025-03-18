@@ -1,3 +1,5 @@
-abstract class BaseUsecase <T>{
-  Future<T> execute();
+
+
+abstract class BaseUsecase <T, E>{
+  Future<T> execute({required E params});
 }

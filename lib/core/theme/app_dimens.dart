@@ -1,7 +1,7 @@
 abstract class AppDimens {
-  static const int smallPadding = 8;
-  static const int mediumPadding = 8;
-  static const int largePadding = 8;
+  static const double smallPadding = 8;
+  static const double mediumPadding = 18;
+  static const double largePadding = 24;
 
 
 }

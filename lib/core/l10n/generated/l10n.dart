@@ -64,6 +64,16 @@ class L10ns {
       args: [],
     );
   }
+
+  /// `Total characters`
+  String get allCharacters {
+    return Intl.message(
+      'Total characters',
+      name: 'allCharacters',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<L10ns> {

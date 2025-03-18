@@ -9,6 +9,8 @@ import 'package:rick_and_morty/features/all_characters/presentation/bloc/all_cha
 class AllCharactersBloc
     extends BaseBloc<AllCharactersEvent, AllCharactersState> {
   final FetchAllCharactersUsecase _allCharactersUsecase;
+  // int page = 0;
+  List<CharacterEntity> allCharacters = [];
 
   AllCharactersBloc({required FetchAllCharactersUsecase fetchCharactersUsecase})
     : _allCharactersUsecase = fetchCharactersUsecase,
@@ -19,11 +21,22 @@ class AllCharactersBloc
         ),
       ) {
     on<FetchAllCharactersEvent>((event, emit) async {
-      emit(AllCharactersState(status: StateStatus.loading));
+      //emit(AllCharactersState(status: StateStatus.loading));
       try {
-        final result = await _allCharactersUsecase.execute();
+        final result = await _allCharactersUsecase.execute(
+          params: FetchAllCharactersParams(page: event.page),
+        );
+        allCharacters.addAll(result.results ?? []);
 
-        emit(AllCharactersState(status: StateStatus.loaded, model: result));
+        emit(
+          AllCharactersState(
+            status: StateStatus.loaded,
+            model: AllCharactersEntity(
+              info: result.info,
+              results: allCharacters,
+            ),
+          ),
+        );
       } catch (e) {
         emit(AllCharactersState(status: StateStatus.error));
       }
