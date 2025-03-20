@@ -24,5 +24,8 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "allCharacters": MessageLookupByLibrary.simpleMessage("Total characters"),
     "rickAndMorty": MessageLookupByLibrary.simpleMessage("Rick and Morty"),
+    "searchCharacters": MessageLookupByLibrary.simpleMessage(
+      "Find a character",
+    ),
   };
 }

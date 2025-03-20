@@ -1,6 +1,7 @@
 {
     "@@locale": "en",
     "rickAndMorty": "Rick and Morty",
-    "allCharacters" : "Total characters"
+    "allCharacters" : "Total characters",
+    "searchCharacters": "Find a character"
 
 }

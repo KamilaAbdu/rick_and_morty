@@ -1,5 +1,7 @@
 {
     "@@locale": "ky",
     "rickAndMorty": "Рик жана Морти",
-    "allCharacters" : "Баардык кармандар"
+    "allCharacters" : "Баардык кармандар",
+    "searchCharacters": "Каарман табыңыз"
+
 }

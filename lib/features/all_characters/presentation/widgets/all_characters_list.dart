@@ -19,11 +19,13 @@ class AllCharactersList extends StatefulWidget {
     required this.characters,
     required this.currentPage,
     required this.maxPage,
+    required this.searchController,
   });
 
   final List<CharacterEntity> characters;
   final ValueNotifier<int> currentPage;
   final int maxPage;
+  final TextEditingController searchController;
 
   @override
   State<AllCharactersList> createState() => _AllCharactersListState();
@@ -35,7 +37,6 @@ class _AllCharactersListState extends State<AllCharactersList> {
 
   // int page = 1;
   // final _allCharactersBloc = di<AllCharactersBloc>();
-  
 
   // @override
   // void initState() {
@@ -64,11 +65,20 @@ class _AllCharactersListState extends State<AllCharactersList> {
                   (_scrollController.position.maxScrollExtent) &&
               _isReadyToLoad &&
               widget.currentPage.value < widget.maxPage) {
-            di<AllCharactersBloc>().add(
-              FetchAllCharactersEvent(page: widget.currentPage.value),
-            );
+            if (widget.searchController.text == '') {
+              di<AllCharactersBloc>().add(
+                FetchAllCharactersEvent(page: widget.currentPage.value),
+              );
+            } else {
+              di<AllCharactersBloc>().add(
+                SearchSingleCharacterEvent(
+                  name: widget.searchController.text,
+                  page: widget.currentPage.value,
+                ),
+              );
+            }
             widget.currentPage.value++;
-           
+
             _isReadyToLoad = false;
           }
           return false;
@@ -107,7 +117,10 @@ class _AllCharactersListState extends State<AllCharactersList> {
                               (widget.characters[index].status ?? '')
                                   .toUpperCase(),
                               style: AppTextStyles.s10w500.copyWith(
-                                color: AppColors.characterStatusGreen,
+                                color:
+                                    widget.characters[index].status == 'Alive'
+                                        ? AppColors.characterStatusGreen
+                                        : AppColors.characterStatusRed,
                               ),
                             ),
 

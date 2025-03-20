@@ -74,6 +74,16 @@ class L10ns {
       args: [],
     );
   }
+
+  /// `Find a character`
+  String get searchCharacters {
+    return Intl.message(
+      'Find a character',
+      name: 'searchCharacters',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<L10ns> {

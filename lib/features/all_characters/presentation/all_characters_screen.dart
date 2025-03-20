@@ -12,6 +12,7 @@ import 'package:rick_and_morty/features/all_characters/presentation/bloc/all_cha
 import 'package:rick_and_morty/features/all_characters/presentation/bloc/all_characters_event.dart';
 import 'package:rick_and_morty/features/all_characters/presentation/bloc/all_characters_state.dart';
 import 'package:rick_and_morty/features/all_characters/presentation/widgets/all_characters_list.dart';
+import 'package:rick_and_morty/features/all_characters/presentation/widgets/search_character_text_field.dart';
 import 'package:rick_and_morty/main.dart';
 
 @RoutePage()
@@ -23,52 +24,67 @@ class AllCharactersScreen extends StatefulWidget {
 }
 
 class _AllCharactersScreenState extends State<AllCharactersScreen> {
+  final _textFieldController = TextEditingController();
   final _allCharactersBloc =
       di<AllCharactersBloc>()..add(FetchAllCharactersEvent(page: 1));
   final _currentPage = ValueNotifier<int>(2);
+  final _searchCurrentPage = ValueNotifier<int>(2);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.mainDark,
-      appBar: AppBar(
-        title: Text(L10ns.of(context).rickAndMorty),
-        backgroundColor: Colors.transparent,
-        surfaceTintColor: Colors.transparent,
-      ),
-      body: BlocProvider.value(
-        value: _allCharactersBloc,
-        child: BlocBuilder<AllCharactersBloc, AllCharactersState>(
-          builder: (context, state) {
-            if (state.status == StateStatus.loaded) {
-              return Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: AppDimens.mediumPadding,
+
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: AppDimens.mediumPadding,
+          ),
+          child: Column(
+            children: [
+              SearchTextField(
+                textFieldController: _textFieldController,
+                allCharactersBloc: _allCharactersBloc,
+              ),
+              AppDimens.mediumPadding.verticalSizedBox,
+              Expanded(
+                child: BlocProvider.value(
+                  value: _allCharactersBloc,
+                  child: BlocBuilder<AllCharactersBloc, AllCharactersState>(
+                    builder: (context, state) {
+                      if (state.status == StateStatus.loaded) {
+                        return Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              '${context.lang.allCharacters}: ${state.model?.info?.count ?? 0}',
+                              style: AppTextStyles.s10w500.copyWith(
+                                color: AppColors.uiDarkGrey,
+                              ),
+                            ),
+                            AppDimens.smallPadding.verticalSizedBox,
+                            Expanded(
+                              child: AllCharactersList(
+                                characters: state.model?.results ?? [],
+                                currentPage:
+                                    _textFieldController.text == ''
+                                        ? _currentPage
+                                        : _searchCurrentPage,
+                                maxPage: state.model?.info?.pages ?? 0,
+                                searchController: _textFieldController,
+                              ),
+                            ),
+                          ],
+                        );
+                      } else {
+                        return Center(child: Text('No data'));
+                      }
+                    },
+                  ),
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      '${context.lang.allCharacters}: ${state.model?.info?.count ?? 0}',
-                      style: AppTextStyles.s10w500.copyWith(
-                        color: AppColors.uiDarkGrey,
-                      ),
-                    ),
-                    AppDimens.smallPadding.verticalSizedBox,
-                    Expanded(
-                      child: AllCharactersList(
-                        characters: state.model?.results ?? [],
-                        currentPage: _currentPage,
-                        maxPage: state.model?.info?.pages ?? 0,
-                      ),
-                    ),
-                  ],
-                ),
-              );
-            } else {
-              return Center(child: Text('No data'));
-            }
-          },
+              ),
+            ],
+          ),
         ),
       ),
     );

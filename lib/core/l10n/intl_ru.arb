@@ -1,5 +1,7 @@
 {
     "@@locale": "ru",
     "rickAndMorty": "Рик и Морти",
-    "allCharacters" : "Всего персонажей"
+    "allCharacters" : "Всего персонажей",
+    "searchCharacters": "Найти персонажа"
+
 }
