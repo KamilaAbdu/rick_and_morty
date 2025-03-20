@@ -131,7 +131,7 @@ class _AllCharactersListState extends State<AllCharactersList> {
                               ),
                             ),
                             Text(
-                              widget.characters[index].species ?? '',
+                              '${widget.characters[index].species ?? ''}, ${widget.characters[index].gender}',
                               style: AppTextStyles.s12w400.copyWith(
                                 color: AppColors.characterInfoGrey,
                               ),
