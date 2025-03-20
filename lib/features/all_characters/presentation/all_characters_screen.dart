@@ -59,6 +59,7 @@ class _AllCharactersScreenState extends State<AllCharactersScreen> {
                       child: AllCharactersList(
                         characters: state.model?.results ?? [],
                         currentPage: _currentPage,
+                        maxPage: state.model?.info?.pages ?? 0,
                       ),
                     ),
                   ],

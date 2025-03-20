@@ -18,10 +18,12 @@ class AllCharactersList extends StatefulWidget {
     super.key,
     required this.characters,
     required this.currentPage,
+    required this.maxPage,
   });
 
   final List<CharacterEntity> characters;
   final ValueNotifier<int> currentPage;
+  final int maxPage;
 
   @override
   State<AllCharactersList> createState() => _AllCharactersListState();
@@ -31,9 +33,9 @@ class _AllCharactersListState extends State<AllCharactersList> {
   final _scrollController = ScrollController();
   bool _isReadyToLoad = true;
 
-  //int page = 1;
-  //final _allCharactersBloc = di<AllCharactersBloc>();
-  // ..add(FetchAllCharactersEvent(page: page));
+  // int page = 1;
+  // final _allCharactersBloc = di<AllCharactersBloc>();
+  
 
   // @override
   // void initState() {
@@ -58,19 +60,21 @@ class _AllCharactersListState extends State<AllCharactersList> {
       },
       child: NotificationListener(
         onNotification: (notification) {
-          if (_scrollController.position.pixels + 100 <=
+          if (_scrollController.position.pixels >=
                   (_scrollController.position.maxScrollExtent) &&
-              _isReadyToLoad) {
+              _isReadyToLoad &&
+              widget.currentPage.value < widget.maxPage) {
             di<AllCharactersBloc>().add(
               FetchAllCharactersEvent(page: widget.currentPage.value),
             );
             widget.currentPage.value++;
-            log('current page ${widget.currentPage.value}');
+           
             _isReadyToLoad = false;
           }
           return false;
         },
         child: CustomScrollView(
+          controller: _scrollController,
           slivers: [
             SliverFixedExtentList(
               itemExtent: 120,
