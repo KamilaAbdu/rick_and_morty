@@ -29,6 +29,7 @@ class AllCharactersBloc
        ) {
     on<FetchAllCharactersEvent>((event, emit) async {
       //emit(AllCharactersState(status: StateStatus.loading));
+      searchList.clear();
       try {
         final result = await _allCharactersUsecase.execute(
           params: FetchAllCharactersParams(page: event.page),
@@ -49,6 +50,7 @@ class AllCharactersBloc
       }
     });
     on<SearchSingleCharacterEvent>((event, emit) async {
+      allCharacters.clear();
       try {
         final result = await _searchSingleCharacterUsecase.execute(
           params: SearchSingleCharacterParams(
@@ -60,13 +62,13 @@ class AllCharactersBloc
             page: event.page,
           ),
         );
-        searchList.addAll(result.results ?? []);
+        //searchList.addAll(result.results ?? []);
         emit(
           AllCharactersState(
             status: StateStatus.loaded,
             model: AllCharactersEntity(
               info: result.info,
-              results: searchList,
+              results: result.results,
             ),
           ),
         );

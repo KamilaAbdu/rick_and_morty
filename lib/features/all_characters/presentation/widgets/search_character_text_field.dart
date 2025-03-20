@@ -15,6 +15,7 @@ class SearchTextField extends StatelessWidget {
 
   final TextEditingController _textFieldController;
   final AllCharactersBloc _allCharactersBloc;
+  
 
   @override
   Widget build(BuildContext context) {
@@ -30,10 +31,17 @@ class SearchTextField extends StatelessWidget {
           Expanded(
             child: TextField(
               controller: _textFieldController,
+              style: AppTextStyles.s16w400.copyWith(
+                color: AppColors.characterNameWhite,
+              ),
               onChanged: (value) {
-                _allCharactersBloc.add(
-                  SearchSingleCharacterEvent(name: value, page: 1),
-                );
+                if (value.isEmpty) {
+                  _allCharactersBloc.add(FetchAllCharactersEvent(page: 1));
+                } else {
+                  _allCharactersBloc.add(
+                    SearchSingleCharacterEvent(name: value, page: 1),
+                  );
+                }
               },
               decoration: InputDecoration(
                 prefixIcon: Icon(Icons.search, size: 24),
@@ -51,8 +59,8 @@ class SearchTextField extends StatelessWidget {
             ),
           ),
           Container(
-            width: 1.5, 
-            height: 24, 
+            width: 1.5,
+            height: 24,
             color: AppColors.uiDarkGrey,
             margin: EdgeInsets.symmetric(horizontal: 8),
           ),
