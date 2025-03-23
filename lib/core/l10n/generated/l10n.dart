@@ -84,6 +84,71 @@ class L10ns {
       args: [],
     );
   }
+
+  /// `Gender`
+  String get characterGender {
+    return Intl.message('Gender', name: 'characterGender', desc: '', args: []);
+  }
+
+  /// `Species`
+  String get characterSpecies {
+    return Intl.message(
+      'Species',
+      name: 'characterSpecies',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Place of Birth`
+  String get characterPlaceofBirth {
+    return Intl.message(
+      'Place of Birth',
+      name: 'characterPlaceofBirth',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Location`
+  String get characterLocation {
+    return Intl.message(
+      'Location',
+      name: 'characterLocation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Episodes`
+  String get characterEpisodes {
+    return Intl.message(
+      'Episodes',
+      name: 'characterEpisodes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `All episodes`
+  String get characterAllEpisodes {
+    return Intl.message(
+      'All episodes',
+      name: 'characterAllEpisodes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Episode`
+  String get characterIncludedSeries {
+    return Intl.message(
+      'Episode',
+      name: 'characterIncludedSeries',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<L10ns> {

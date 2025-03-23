@@ -25,3 +25,40 @@ class AllCharactersRoute extends PageRouteInfo<void> {
     },
   );
 }
+
+/// generated route for
+/// [CharacterDetailsScreen]
+class CharacterDetailsRoute extends PageRouteInfo<CharacterDetailsRouteArgs> {
+  CharacterDetailsRoute({
+    Key? key,
+    required CharacterEntity entity,
+    List<PageRouteInfo>? children,
+  }) : super(
+         CharacterDetailsRoute.name,
+         args: CharacterDetailsRouteArgs(key: key, entity: entity),
+         initialChildren: children,
+       );
+
+  static const String name = 'CharacterDetailsRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      final args = data.argsAs<CharacterDetailsRouteArgs>();
+      return CharacterDetailsScreen(key: args.key, entity: args.entity);
+    },
+  );
+}
+
+class CharacterDetailsRouteArgs {
+  const CharacterDetailsRouteArgs({this.key, required this.entity});
+
+  final Key? key;
+
+  final CharacterEntity entity;
+
+  @override
+  String toString() {
+    return 'CharacterDetailsRouteArgs{key: $key, entity: $entity}';
+  }
+}

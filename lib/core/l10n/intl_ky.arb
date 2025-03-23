@@ -2,6 +2,15 @@
     "@@locale": "ky",
     "rickAndMorty": "Рик жана Морти",
     "allCharacters" : "Баардык кармандар",
-    "searchCharacters": "Каарман табыңыз"
+    "searchCharacters": "Каарман табыңыз",
+    "characterGender": "Жынысы",
+    "characterSpecies": "Түрү",
+    "characterPlaceofBirth": "Туулган жери",
+    "characterLocation": "Жайгашкан жери",
+    "characterEpisodes": "Эпизоддор",
+    "characterAllEpisodes": "Баардык эпизоддор",
+    "characterIncludedSeries": "Серия"
+    
+
 
 }

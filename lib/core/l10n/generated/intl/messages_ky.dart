@@ -23,6 +23,17 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "allCharacters": MessageLookupByLibrary.simpleMessage("Баардык кармандар"),
+    "characterAllEpisodes": MessageLookupByLibrary.simpleMessage(
+      "Баардык эпизоддор",
+    ),
+    "characterEpisodes": MessageLookupByLibrary.simpleMessage("Эпизоддор"),
+    "characterGender": MessageLookupByLibrary.simpleMessage("Жынысы"),
+    "characterIncludedSeries": MessageLookupByLibrary.simpleMessage("Серия"),
+    "characterLocation": MessageLookupByLibrary.simpleMessage("Жайгашкан жери"),
+    "characterPlaceofBirth": MessageLookupByLibrary.simpleMessage(
+      "Туулган жери",
+    ),
+    "characterSpecies": MessageLookupByLibrary.simpleMessage("Түрү"),
     "rickAndMorty": MessageLookupByLibrary.simpleMessage("Рик жана Морти"),
     "searchCharacters": MessageLookupByLibrary.simpleMessage("Каарман табыңыз"),
   };

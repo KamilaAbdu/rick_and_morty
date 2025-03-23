@@ -1,9 +1,11 @@
 import 'dart:developer';
 
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rick_and_morty/core/enums/state_status.dart';
 import 'package:rick_and_morty/core/extensions/app_dimens_extension.dart';
+import 'package:rick_and_morty/core/service/auto_router.dart';
 import 'package:rick_and_morty/core/theme/app_colors.dart';
 import 'package:rick_and_morty/core/theme/app_dimens.dart';
 import 'package:rick_and_morty/core/theme/app_text_styles.dart';
@@ -11,6 +13,7 @@ import 'package:rick_and_morty/features/all_characters/domain/entity/all_charact
 import 'package:rick_and_morty/features/all_characters/presentation/bloc/all_characters_bloc.dart';
 import 'package:rick_and_morty/features/all_characters/presentation/bloc/all_characters_event.dart';
 import 'package:rick_and_morty/features/all_characters/presentation/bloc/all_characters_state.dart';
+import 'package:rick_and_morty/features/character_details/presentation/character_details_screen.dart';
 import 'package:rick_and_morty/main.dart';
 
 class AllCharactersList extends StatefulWidget {
@@ -91,55 +94,62 @@ class _AllCharactersListState extends State<AllCharactersList> {
               delegate: SliverChildBuilderDelegate(
                 childCount: widget.characters.length,
                 (BuildContext context, int index) {
-                  return Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Container(
-                        height: 100,
-                        width: 100,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          image: DecorationImage(
-                            fit: BoxFit.fitHeight,
-                            image: NetworkImage(
-                              widget.characters[index].image ?? '',
+                  return GestureDetector(
+                    onTap: () {
+                      context.router.push(
+                        CharacterDetailsRoute(entity: widget.characters[index]),
+                      );
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Container(
+                          height: 100,
+                          width: 100,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            image: DecorationImage(
+                              fit: BoxFit.fitHeight,
+                              image: NetworkImage(
+                                widget.characters[index].image ?? '',
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                      AppDimens.mediumPadding.horizontalSizedBox,
-                      Expanded(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              (widget.characters[index].status ?? '')
-                                  .toUpperCase(),
-                              style: AppTextStyles.s10w500.copyWith(
-                                color:
-                                    widget.characters[index].status == 'Alive'
-                                        ? AppColors.characterStatusGreen
-                                        : AppColors.characterStatusRed,
+                        AppDimens.mediumPadding.horizontalSizedBox,
+                        Expanded(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                (widget.characters[index].status ?? '')
+                                    .toUpperCase(),
+                                style: AppTextStyles.s10w500.copyWith(
+                                  color:
+                                      widget.characters[index].status == 'Alive'
+                                          ? AppColors.characterStatusGreen
+                                          : AppColors.characterStatusRed,
+                                ),
                               ),
-                            ),
 
-                            Text(
-                              widget.characters[index].name ?? '',
-                              style: AppTextStyles.s16w500.copyWith(
-                                color: AppColors.characterNameWhite,
+                              Text(
+                                widget.characters[index].name ?? '',
+                                style: AppTextStyles.s16w500.copyWith(
+                                  color: AppColors.characterNameWhite,
+                                ),
                               ),
-                            ),
-                            Text(
-                              '${widget.characters[index].species ?? ''}, ${widget.characters[index].gender}',
-                              style: AppTextStyles.s12w400.copyWith(
-                                color: AppColors.characterInfoGrey,
+                              Text(
+                                '${widget.characters[index].species ?? ''}, ${widget.characters[index].gender}',
+                                style: AppTextStyles.s12w400.copyWith(
+                                  color: AppColors.characterInfoGrey,
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   );
                 },
               ),

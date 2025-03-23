@@ -1,6 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rick_and_morty/core/enums/state_status.dart';
+import 'package:rick_and_morty/core/service/auto_router.dart';
 import 'package:rick_and_morty/core/theme/app_colors.dart';
 import 'package:rick_and_morty/core/theme/app_text_styles.dart';
 import 'package:rick_and_morty/features/all_characters/domain/entity/all_characters_entity.dart';
@@ -74,47 +76,54 @@ class _AllCharactersGridState extends State<AllCharactersGrid> {
           itemBuilder: (context, index) {
             final character = widget.characters[index];
 
-            return Column(
-              children: [
-                Container(
-                  height: 122,
-                  width: 120,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: NetworkImage(character.image ?? ''),
+            return GestureDetector(
+              onTap: () {
+                context.router.push(
+                  CharacterDetailsRoute(entity: widget.characters[index]),
+                );
+              },
+              child: Column(
+                children: [
+                  Container(
+                    height: 122,
+                    width: 120,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: NetworkImage(character.image ?? ''),
+                      ),
                     ),
                   ),
-                ),
-                const SizedBox(height: 8),
+                  const SizedBox(height: 8),
 
-                Text(
-                  (character.status ?? '').toUpperCase(),
-                  style: AppTextStyles.s10w500.copyWith(
-                    color:
-                        character.status == 'Alive'
-                            ? AppColors.characterStatusGreen
-                            : AppColors.characterStatusRed,
+                  Text(
+                    (character.status ?? '').toUpperCase(),
+                    style: AppTextStyles.s10w500.copyWith(
+                      color:
+                          character.status == 'Alive'
+                              ? AppColors.characterStatusGreen
+                              : AppColors.characterStatusRed,
+                    ),
                   ),
-                ),
 
-                Text(
-                  character.name ?? '',
-                  style: AppTextStyles.s14w500.copyWith(
-                    color: AppColors.characterNameWhite,
+                  Text(
+                    character.name ?? '',
+                    style: AppTextStyles.s14w500.copyWith(
+                      color: AppColors.characterNameWhite,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
-                  textAlign: TextAlign.center,
-                ),
 
-                Text(
-                  character.species ?? '',
-                  style: AppTextStyles.s12w400.copyWith(
-                    color: AppColors.characterInfoGrey,
+                  Text(
+                    character.species ?? '',
+                    style: AppTextStyles.s12w400.copyWith(
+                      color: AppColors.characterInfoGrey,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
-                  textAlign: TextAlign.center,
-                ),
-              ],
+                ],
+              ),
             );
           },
         ),

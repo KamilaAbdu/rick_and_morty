@@ -2,6 +2,14 @@
     "@@locale": "en",
     "rickAndMorty": "Rick and Morty",
     "allCharacters" : "Total characters",
-    "searchCharacters": "Find a character"
+    "searchCharacters": "Find a character",
+    "characterGender": "Gender",
+    "characterSpecies": "Species",
+    "characterPlaceofBirth": "Place of Birth",
+    "characterLocation": "Location",
+    "characterEpisodes": "Episodes",
+    "characterAllEpisodes": "All episodes",
+    "characterIncludedSeries": "Episode"
+
 
 }

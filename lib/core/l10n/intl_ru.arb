@@ -2,6 +2,15 @@
     "@@locale": "ru",
     "rickAndMorty": "Рик и Морти",
     "allCharacters" : "Всего персонажей",
-    "searchCharacters": "Найти персонажа"
+    "searchCharacters": "Найти персонажа",
+    "characterGender": "Пол",
+    "characterSpecies": "Расса",
+    "characterPlaceofBirth": "Место рождения",
+    "characterLocation": "Местоположение",
+    "characterEpisodes": "Эпизоды",
+    "characterAllEpisodes": "Все эпизоды",
+    "characterIncludedSeries": "Серия"
+
+
 
 }
