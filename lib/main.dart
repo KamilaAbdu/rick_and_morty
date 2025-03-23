@@ -32,7 +32,7 @@ class RickAndMortyApp extends StatelessWidget {
           return MaterialApp.router(
             debugShowCheckedModeBanner: false,
             locale: localizationProvider.currentLocale,
-            theme: themeProvider.currentTheme,
+            theme: context.watch<ThemeProvider>().currentTheme,
             localizationsDelegates: const [
               L10ns.delegate,
               GlobalMaterialLocalizations.delegate,

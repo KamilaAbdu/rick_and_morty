@@ -144,7 +144,12 @@ class SettingsScreen extends StatelessWidget {
                   ],
                 ),
                 const Spacer(),
-                IconButton(onPressed: () {}, icon: Icon(Icons.arrow_forward_ios))
+                IconButton(
+                  onPressed: () {
+                    _showThemeDialog(context);
+                  },
+                  icon: Icon(Icons.arrow_forward_ios),
+                ),
               ],
             ),
           ],
@@ -152,4 +157,94 @@ class SettingsScreen extends StatelessWidget {
       ),
     );
   }
+}
+
+void _showThemeDialog(BuildContext context) {
+  final themeProvider = context.read<ThemeProvider>();
+  int selectedThemeIndex = themeProvider.isDark ? 1 : 0;
+
+  showDialog(
+    context: context,
+    builder: (context) {
+      return Dialog(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        child: Padding(
+          padding: const EdgeInsets.all(24.0),
+          child: StatefulBuilder(
+            builder: (context, setState) {
+              return Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    context.lang.darkTheme,
+                    style: AppTextStyles.s20w500.copyWith(
+                      color:
+                          themeProvider.currentTheme == AppTheme.darkTheme
+                              ? Colors.white
+                              : AppColors.mainDark,
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  RadioListTile<int>(
+                    value: 0,
+                    groupValue: selectedThemeIndex,
+                    activeColor: Colors.cyanAccent,
+                    onChanged: (value) {
+                      setState(() {
+                        selectedThemeIndex = value!;
+                      });
+                      themeProvider.toggleTheme(false);
+                    },
+                    title: Text(
+                      context.lang.disabledTheme,
+                      style: AppTextStyles.s16w400.copyWith(
+                        color:
+                            themeProvider.currentTheme == AppTheme.darkTheme
+                                ? Colors.white
+                                : AppColors.mainDark,
+                      ),
+                    ),
+                  ),
+                  RadioListTile<int>(
+                    value: 1,
+                    groupValue: selectedThemeIndex,
+                    activeColor: Colors.cyanAccent,
+                    onChanged: (value) {
+                      setState(() {
+                        selectedThemeIndex = value!;
+                      });
+                      themeProvider.toggleTheme(true);
+                    },
+                    title: Text(
+                      context.lang.activeTheme,
+                      style: AppTextStyles.s16w400.copyWith(
+                        color:
+                            themeProvider.currentTheme == AppTheme.darkTheme
+                                ? Colors.white
+                                : AppColors.mainDark,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: TextButton(
+                      onPressed: () => Navigator.pop(context),
+                      child: Text(context.lang.cancel, style: AppTextStyles.s14w500.copyWith(
+                        color:
+                            themeProvider.currentTheme == AppTheme.darkTheme
+                                ? Colors.white
+                                : AppColors.mainDark,
+                      ),),
+                    ),
+                  ),
+                ],
+              );
+            },
+          ),
+        ),
+      );
+    },
+  );
 }
