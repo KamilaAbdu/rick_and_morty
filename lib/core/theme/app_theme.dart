@@ -5,6 +5,11 @@ abstract class AppTheme extends ChangeNotifier{
   static final darkTheme = ThemeData(
     scaffoldBackgroundColor: AppColors.mainDark,
     iconTheme: IconThemeData(color: Colors.white),
+    iconButtonTheme: IconButtonThemeData(
+    style: ButtonStyle(
+      iconColor: WidgetStateProperty.all(Colors.white),
+    ),
+  ),
     textTheme: TextTheme().copyWith(
       bodySmall: TextStyle(color: Colors.white),
       bodyMedium: TextStyle(color: Colors.white),
@@ -23,7 +28,11 @@ abstract class AppTheme extends ChangeNotifier{
   static final lightTheme = ThemeData(
     scaffoldBackgroundColor: Colors.white,
     iconTheme: IconThemeData(color: AppColors.mainDark),
-
+iconButtonTheme: IconButtonThemeData(
+    style: ButtonStyle(
+      iconColor: WidgetStateProperty.all(AppColors.mainDark),
+    ),
+  ),
     textTheme: TextTheme().copyWith(
       bodySmall: TextStyle(color: AppColors.mainDark,),
       bodyMedium: TextStyle(color: AppColors.mainDark,),

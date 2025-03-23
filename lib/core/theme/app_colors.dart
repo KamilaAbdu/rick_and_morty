@@ -9,6 +9,9 @@ abstract class AppColors {
   static const Color characterStatusRed = Color(0xffEB5757);
   static const Color characterNameWhite = Color(0xffffffff);
   static const Color characterInfoGrey = Color(0xff6E798C);
+  static const Color uiDarkBlue = Color(0xff22A2BD);
+
+
   
 
 

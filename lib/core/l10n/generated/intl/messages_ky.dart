@@ -22,27 +22,73 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-    "allCharacters": MessageLookupByLibrary.simpleMessage("Баардык кармандар"),
+    "aboutApp": MessageLookupByLibrary.simpleMessage("Тиркеме жөнүндө"),
+    "activeTheme": MessageLookupByLibrary.simpleMessage("Иштеп жатат"),
+    "allCharacters": MessageLookupByLibrary.simpleMessage("Бардык каармандар"),
+    "appDescription": MessageLookupByLibrary.simpleMessage(
+      "Зигериондуктар Джерри менен Рикти симуляцияга салып, кара материянын сырын билүүгө аракет кылышат.",
+    ),
+    "appVersion": MessageLookupByLibrary.simpleMessage("Тиркеменин версиясы"),
+    "cancel": MessageLookupByLibrary.simpleMessage("Жокко чыгаруу"),
+    "changeTheme": MessageLookupByLibrary.simpleMessage("Тема"),
+    "changeUserAvatar": MessageLookupByLibrary.simpleMessage(
+      "Сүрөттү өзгөртүү",
+    ),
+    "changeUserName": MessageLookupByLibrary.simpleMessage("Атыңызды өзгөртүү"),
     "characterAllEpisodes": MessageLookupByLibrary.simpleMessage(
-      "Баардык эпизоддор",
+      "Бардык эпизоддор",
     ),
     "characterEpisodes": MessageLookupByLibrary.simpleMessage("Эпизоддор"),
+    "characterFilters": MessageLookupByLibrary.simpleMessage("Фильтрлер"),
     "characterGender": MessageLookupByLibrary.simpleMessage("Жынысы"),
+    "characterGenderMan": MessageLookupByLibrary.simpleMessage("Эркек"),
+    "characterGenderWoman": MessageLookupByLibrary.simpleMessage("Аял"),
     "characterIncludedSeries": MessageLookupByLibrary.simpleMessage("Серия"),
     "characterLocation": MessageLookupByLibrary.simpleMessage("Жайгашкан жери"),
+    "characterNoGender": MessageLookupByLibrary.simpleMessage("Жынысы жок"),
     "characterPlaceofBirth": MessageLookupByLibrary.simpleMessage(
       "Туулган жери",
     ),
+    "characterSearchResults": MessageLookupByLibrary.simpleMessage(
+      "Издөө жыйынтыгы",
+    ),
     "characterSpecies": MessageLookupByLibrary.simpleMessage("Түрү"),
+    "characterStatus": MessageLookupByLibrary.simpleMessage("Абалы"),
+    "characterStatusAlive": MessageLookupByLibrary.simpleMessage("Тирүү"),
+    "characterStatusDead": MessageLookupByLibrary.simpleMessage("Өлгөн"),
+    "characterStatusNoInfo": MessageLookupByLibrary.simpleMessage("Белгисиз"),
+    "darkTheme": MessageLookupByLibrary.simpleMessage("Кара тема"),
+    "disabledTheme": MessageLookupByLibrary.simpleMessage("Иштебейт"),
+    "edit": MessageLookupByLibrary.simpleMessage("Түзөтүү"),
+    "editUserInformation": MessageLookupByLibrary.simpleMessage(
+      "Профилди түзөтүү",
+    ),
+    "filterCharacter": MessageLookupByLibrary.simpleMessage("Иреттөө"),
+    "filterCharacterByAlp": MessageLookupByLibrary.simpleMessage(
+      "Алфавит боюнча",
+    ),
+    "filterCharacterNoResults": MessageLookupByLibrary.simpleMessage(
+      "Бул фильтрлер боюнча эч нерсе табылган жок",
+    ),
+    "lightTheme": MessageLookupByLibrary.simpleMessage("Жарык тема"),
+    "login": MessageLookupByLibrary.simpleMessage("Кирүү"),
     "navigationBarCharacters": MessageLookupByLibrary.simpleMessage(
-      "Кармандар",
+      "Каармандар",
     ),
     "navigationBarEpisodes": MessageLookupByLibrary.simpleMessage("Эпизоддор"),
     "navigationBarLocations": MessageLookupByLibrary.simpleMessage(
       "Жайгашуулар",
     ),
     "navigationBarSettings": MessageLookupByLibrary.simpleMessage("Орнотуулар"),
+    "noCharacterSearchResults": MessageLookupByLibrary.simpleMessage(
+      "Мындай аталыштагы каарман табылган жок",
+    ),
     "rickAndMorty": MessageLookupByLibrary.simpleMessage("Рик жана Морти"),
-    "searchCharacters": MessageLookupByLibrary.simpleMessage("Каарман табуу"),
+    "save": MessageLookupByLibrary.simpleMessage("Сактоо"),
+    "searchCharacters": MessageLookupByLibrary.simpleMessage("Каарманды издөө"),
+    "userLastName": MessageLookupByLibrary.simpleMessage("Фамилиясы"),
+    "userName": MessageLookupByLibrary.simpleMessage("Аты"),
+    "userPatronic": MessageLookupByLibrary.simpleMessage("Атасынын аты"),
+    "userProfile": MessageLookupByLibrary.simpleMessage("Профиль"),
   };
 }

@@ -22,27 +22,69 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "aboutApp": MessageLookupByLibrary.simpleMessage("About the app"),
+    "activeTheme": MessageLookupByLibrary.simpleMessage("Enabled"),
     "allCharacters": MessageLookupByLibrary.simpleMessage("Total characters"),
+    "appDescription": MessageLookupByLibrary.simpleMessage(
+      "Zigerians trap Jerry and Rick in a simulation to learn the secret of concentrated dark matter.",
+    ),
+    "appVersion": MessageLookupByLibrary.simpleMessage("App version"),
+    "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+    "changeTheme": MessageLookupByLibrary.simpleMessage("Appearance"),
+    "changeUserAvatar": MessageLookupByLibrary.simpleMessage("Change photo"),
+    "changeUserName": MessageLookupByLibrary.simpleMessage("Change full name"),
     "characterAllEpisodes": MessageLookupByLibrary.simpleMessage(
       "All episodes",
     ),
     "characterEpisodes": MessageLookupByLibrary.simpleMessage("Episodes"),
+    "characterFilters": MessageLookupByLibrary.simpleMessage("Filters"),
     "characterGender": MessageLookupByLibrary.simpleMessage("Gender"),
-    "characterIncludedSeries": MessageLookupByLibrary.simpleMessage("Episode"),
+    "characterGenderMan": MessageLookupByLibrary.simpleMessage("Male"),
+    "characterGenderWoman": MessageLookupByLibrary.simpleMessage("Female"),
+    "characterIncludedSeries": MessageLookupByLibrary.simpleMessage("Series"),
     "characterLocation": MessageLookupByLibrary.simpleMessage("Location"),
+    "characterNoGender": MessageLookupByLibrary.simpleMessage("Genderless"),
     "characterPlaceofBirth": MessageLookupByLibrary.simpleMessage(
-      "Place of Birth",
+      "Place of birth",
+    ),
+    "characterSearchResults": MessageLookupByLibrary.simpleMessage(
+      "Search results",
     ),
     "characterSpecies": MessageLookupByLibrary.simpleMessage("Species"),
+    "characterStatus": MessageLookupByLibrary.simpleMessage("Status"),
+    "characterStatusAlive": MessageLookupByLibrary.simpleMessage("Alive"),
+    "characterStatusDead": MessageLookupByLibrary.simpleMessage("Dead"),
+    "characterStatusNoInfo": MessageLookupByLibrary.simpleMessage("Unknown"),
+    "darkTheme": MessageLookupByLibrary.simpleMessage("Dark theme"),
+    "disabledTheme": MessageLookupByLibrary.simpleMessage("Disabled"),
+    "edit": MessageLookupByLibrary.simpleMessage("Edit"),
+    "editUserInformation": MessageLookupByLibrary.simpleMessage("Edit profile"),
+    "filterCharacter": MessageLookupByLibrary.simpleMessage("Sort"),
+    "filterCharacterByAlp": MessageLookupByLibrary.simpleMessage(
+      "Alphabetically",
+    ),
+    "filterCharacterNoResults": MessageLookupByLibrary.simpleMessage(
+      "No results found with these filters",
+    ),
+    "lightTheme": MessageLookupByLibrary.simpleMessage("Light theme"),
+    "login": MessageLookupByLibrary.simpleMessage("Login"),
     "navigationBarCharacters": MessageLookupByLibrary.simpleMessage(
       "Characters",
     ),
     "navigationBarEpisodes": MessageLookupByLibrary.simpleMessage("Episodes"),
     "navigationBarLocations": MessageLookupByLibrary.simpleMessage("Locations"),
     "navigationBarSettings": MessageLookupByLibrary.simpleMessage("Settings"),
-    "rickAndMorty": MessageLookupByLibrary.simpleMessage("Rick and Morty"),
-    "searchCharacters": MessageLookupByLibrary.simpleMessage(
-      "Find a character",
+    "noCharacterSearchResults": MessageLookupByLibrary.simpleMessage(
+      "No character with that name found",
     ),
+    "rickAndMorty": MessageLookupByLibrary.simpleMessage("Rick and Morty"),
+    "save": MessageLookupByLibrary.simpleMessage("Save"),
+    "searchCharacters": MessageLookupByLibrary.simpleMessage(
+      "Search character",
+    ),
+    "userLastName": MessageLookupByLibrary.simpleMessage("Last name"),
+    "userName": MessageLookupByLibrary.simpleMessage("First name"),
+    "userPatronic": MessageLookupByLibrary.simpleMessage("Middle name"),
+    "userProfile": MessageLookupByLibrary.simpleMessage("Profile"),
   };
 }

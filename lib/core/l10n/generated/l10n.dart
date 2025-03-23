@@ -75,10 +75,10 @@ class L10ns {
     );
   }
 
-  /// `Find a character`
+  /// `Search character`
   String get searchCharacters {
     return Intl.message(
-      'Find a character',
+      'Search character',
       name: 'searchCharacters',
       desc: '',
       args: [],
@@ -100,10 +100,15 @@ class L10ns {
     );
   }
 
-  /// `Place of Birth`
+  /// `Status`
+  String get characterStatus {
+    return Intl.message('Status', name: 'characterStatus', desc: '', args: []);
+  }
+
+  /// `Place of birth`
   String get characterPlaceofBirth {
     return Intl.message(
-      'Place of Birth',
+      'Place of birth',
       name: 'characterPlaceofBirth',
       desc: '',
       args: [],
@@ -140,10 +145,10 @@ class L10ns {
     );
   }
 
-  /// `Episode`
+  /// `Series`
   String get characterIncludedSeries {
     return Intl.message(
-      'Episode',
+      'Series',
       name: 'characterIncludedSeries',
       desc: '',
       args: [],
@@ -185,6 +190,236 @@ class L10ns {
     return Intl.message(
       'Settings',
       name: 'navigationBarSettings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit`
+  String get edit {
+    return Intl.message('Edit', name: 'edit', desc: '', args: []);
+  }
+
+  /// `Edit profile`
+  String get editUserInformation {
+    return Intl.message(
+      'Edit profile',
+      name: 'editUserInformation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change photo`
+  String get changeUserAvatar {
+    return Intl.message(
+      'Change photo',
+      name: 'changeUserAvatar',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Profile`
+  String get userProfile {
+    return Intl.message('Profile', name: 'userProfile', desc: '', args: []);
+  }
+
+  /// `Change full name`
+  String get changeUserName {
+    return Intl.message(
+      'Change full name',
+      name: 'changeUserName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `First name`
+  String get userName {
+    return Intl.message('First name', name: 'userName', desc: '', args: []);
+  }
+
+  /// `Last name`
+  String get userLastName {
+    return Intl.message('Last name', name: 'userLastName', desc: '', args: []);
+  }
+
+  /// `Middle name`
+  String get userPatronic {
+    return Intl.message(
+      'Middle name',
+      name: 'userPatronic',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save`
+  String get save {
+    return Intl.message('Save', name: 'save', desc: '', args: []);
+  }
+
+  /// `Login`
+  String get login {
+    return Intl.message('Login', name: 'login', desc: '', args: []);
+  }
+
+  /// `Appearance`
+  String get changeTheme {
+    return Intl.message('Appearance', name: 'changeTheme', desc: '', args: []);
+  }
+
+  /// `Dark theme`
+  String get darkTheme {
+    return Intl.message('Dark theme', name: 'darkTheme', desc: '', args: []);
+  }
+
+  /// `Light theme`
+  String get lightTheme {
+    return Intl.message('Light theme', name: 'lightTheme', desc: '', args: []);
+  }
+
+  /// `Enabled`
+  String get activeTheme {
+    return Intl.message('Enabled', name: 'activeTheme', desc: '', args: []);
+  }
+
+  /// `Disabled`
+  String get disabledTheme {
+    return Intl.message('Disabled', name: 'disabledTheme', desc: '', args: []);
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message('Cancel', name: 'cancel', desc: '', args: []);
+  }
+
+  /// `About the app`
+  String get aboutApp {
+    return Intl.message('About the app', name: 'aboutApp', desc: '', args: []);
+  }
+
+  /// `Zigerians trap Jerry and Rick in a simulation to learn the secret of concentrated dark matter.`
+  String get appDescription {
+    return Intl.message(
+      'Zigerians trap Jerry and Rick in a simulation to learn the secret of concentrated dark matter.',
+      name: 'appDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `App version`
+  String get appVersion {
+    return Intl.message('App version', name: 'appVersion', desc: '', args: []);
+  }
+
+  /// `Search results`
+  String get characterSearchResults {
+    return Intl.message(
+      'Search results',
+      name: 'characterSearchResults',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No character with that name found`
+  String get noCharacterSearchResults {
+    return Intl.message(
+      'No character with that name found',
+      name: 'noCharacterSearchResults',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Filters`
+  String get characterFilters {
+    return Intl.message(
+      'Filters',
+      name: 'characterFilters',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sort`
+  String get filterCharacter {
+    return Intl.message('Sort', name: 'filterCharacter', desc: '', args: []);
+  }
+
+  /// `Alphabetically`
+  String get filterCharacterByAlp {
+    return Intl.message(
+      'Alphabetically',
+      name: 'filterCharacterByAlp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Alive`
+  String get characterStatusAlive {
+    return Intl.message(
+      'Alive',
+      name: 'characterStatusAlive',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dead`
+  String get characterStatusDead {
+    return Intl.message(
+      'Dead',
+      name: 'characterStatusDead',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unknown`
+  String get characterStatusNoInfo {
+    return Intl.message(
+      'Unknown',
+      name: 'characterStatusNoInfo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Male`
+  String get characterGenderMan {
+    return Intl.message('Male', name: 'characterGenderMan', desc: '', args: []);
+  }
+
+  /// `Female`
+  String get characterGenderWoman {
+    return Intl.message(
+      'Female',
+      name: 'characterGenderWoman',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Genderless`
+  String get characterNoGender {
+    return Intl.message(
+      'Genderless',
+      name: 'characterNoGender',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No results found with these filters`
+  String get filterCharacterNoResults {
+    return Intl.message(
+      'No results found with these filters',
+      name: 'filterCharacterNoResults',
       desc: '',
       args: [],
     );
