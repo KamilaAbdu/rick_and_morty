@@ -9,8 +9,11 @@
     "characterLocation": "Местоположение",
     "characterEpisodes": "Эпизоды",
     "characterAllEpisodes": "Все эпизоды",
-    "characterIncludedSeries": "Серия"
-
+    "characterIncludedSeries": "Серия",
+    "navigationBarCharacters": "Персонажи",
+    "navigationBarLocations": "Локации",
+    "navigationBarEpisodes": "Эпизоды",
+    "navigationBarSettings": "Настройки"
 
 
 }

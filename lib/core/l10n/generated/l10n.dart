@@ -149,6 +149,46 @@ class L10ns {
       args: [],
     );
   }
+
+  /// `Characters`
+  String get navigationBarCharacters {
+    return Intl.message(
+      'Characters',
+      name: 'navigationBarCharacters',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Locations`
+  String get navigationBarLocations {
+    return Intl.message(
+      'Locations',
+      name: 'navigationBarLocations',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Episodes`
+  String get navigationBarEpisodes {
+    return Intl.message(
+      'Episodes',
+      name: 'navigationBarEpisodes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get navigationBarSettings {
+    return Intl.message(
+      'Settings',
+      name: 'navigationBarSettings',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<L10ns> {

@@ -35,7 +35,6 @@ class _AllCharactersScreenState extends State<AllCharactersScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.mainDark,
-
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(
@@ -72,14 +71,11 @@ class _AllCharactersScreenState extends State<AllCharactersScreen> {
                                   builder: (context, isGrid, child) {
                                     return IconButton(
                                       icon: Icon(
-                                        isGrid
-                                            ? Icons.list
-                                            : Icons.grid_view, 
+                                        isGrid ? Icons.list : Icons.grid_view,
                                         color: AppColors.uiDarkGrey,
                                       ),
                                       onPressed: () {
-                                        _isGrid.value =
-                                            !_isGrid.value; 
+                                        _isGrid.value = !_isGrid.value;
                                       },
                                     );
                                   },

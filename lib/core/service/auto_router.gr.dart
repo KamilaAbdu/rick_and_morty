@@ -62,3 +62,67 @@ class CharacterDetailsRouteArgs {
     return 'CharacterDetailsRouteArgs{key: $key, entity: $entity}';
   }
 }
+
+/// generated route for
+/// [EpisodesScreen]
+class EpisodesRoute extends PageRouteInfo<void> {
+  const EpisodesRoute({List<PageRouteInfo>? children})
+    : super(EpisodesRoute.name, initialChildren: children);
+
+  static const String name = 'EpisodesRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const EpisodesScreen();
+    },
+  );
+}
+
+/// generated route for
+/// [LocationsScreen]
+class LocationsRoute extends PageRouteInfo<void> {
+  const LocationsRoute({List<PageRouteInfo>? children})
+    : super(LocationsRoute.name, initialChildren: children);
+
+  static const String name = 'LocationsRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const LocationsScreen();
+    },
+  );
+}
+
+/// generated route for
+/// [MainTabWrapperScreen]
+class MainTabWrapperRoute extends PageRouteInfo<void> {
+  const MainTabWrapperRoute({List<PageRouteInfo>? children})
+    : super(MainTabWrapperRoute.name, initialChildren: children);
+
+  static const String name = 'MainTabWrapperRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const MainTabWrapperScreen();
+    },
+  );
+}
+
+/// generated route for
+/// [SettingsScreen]
+class SettingsRoute extends PageRouteInfo<void> {
+  const SettingsRoute({List<PageRouteInfo>? children})
+    : super(SettingsRoute.name, initialChildren: children);
+
+  static const String name = 'SettingsRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const SettingsScreen();
+    },
+  );
+}

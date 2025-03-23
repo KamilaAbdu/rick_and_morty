@@ -32,6 +32,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "Место рождения",
     ),
     "characterSpecies": MessageLookupByLibrary.simpleMessage("Расса"),
+    "navigationBarCharacters": MessageLookupByLibrary.simpleMessage(
+      "Персонажи",
+    ),
+    "navigationBarEpisodes": MessageLookupByLibrary.simpleMessage("Эпизоды"),
+    "navigationBarLocations": MessageLookupByLibrary.simpleMessage("Локации"),
+    "navigationBarSettings": MessageLookupByLibrary.simpleMessage("Настройки"),
     "rickAndMorty": MessageLookupByLibrary.simpleMessage("Рик и Морти"),
     "searchCharacters": MessageLookupByLibrary.simpleMessage("Найти персонажа"),
   };

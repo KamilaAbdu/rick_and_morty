@@ -34,7 +34,15 @@ class MessageLookup extends MessageLookupByLibrary {
       "Туулган жери",
     ),
     "characterSpecies": MessageLookupByLibrary.simpleMessage("Түрү"),
+    "navigationBarCharacters": MessageLookupByLibrary.simpleMessage(
+      "Кармандар",
+    ),
+    "navigationBarEpisodes": MessageLookupByLibrary.simpleMessage("Эпизоддор"),
+    "navigationBarLocations": MessageLookupByLibrary.simpleMessage(
+      "Жайгашуулар",
+    ),
+    "navigationBarSettings": MessageLookupByLibrary.simpleMessage("Орнотуулар"),
     "rickAndMorty": MessageLookupByLibrary.simpleMessage("Рик жана Морти"),
-    "searchCharacters": MessageLookupByLibrary.simpleMessage("Каарман табыңыз"),
+    "searchCharacters": MessageLookupByLibrary.simpleMessage("Каарман табуу"),
   };
 }

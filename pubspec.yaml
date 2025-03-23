@@ -22,6 +22,7 @@ dependencies:
   provider: ^6.1.2
   logger: ^2.5.0
   flutter_bloc: ^9.1.0
+  flutter_svg: ^2.0.17
 
 dev_dependencies:
   flutter_test:
@@ -31,6 +32,9 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   generate: true
+  assets:
+    - lib/core/assets/images/
+    - lib/core/assets/icons/
 flutter_intl:
   enabled: true 
   main_locale: "en"

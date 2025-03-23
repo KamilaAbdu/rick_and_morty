@@ -9,7 +9,12 @@
     "characterLocation": "Location",
     "characterEpisodes": "Episodes",
     "characterAllEpisodes": "All episodes",
-    "characterIncludedSeries": "Episode"
+    "characterIncludedSeries": "Episode",
+    "navigationBarCharacters": "Characters",
+    "navigationBarLocations": "Locations",
+    "navigationBarEpisodes": "Episodes",
+    "navigationBarSettings": "Settings"
+
 
 
 }
