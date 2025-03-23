@@ -136,7 +136,7 @@ class _AllCharactersListState extends State<AllCharactersList> {
                               Text(
                                 widget.characters[index].name ?? '',
                                 style: AppTextStyles.s16w500.copyWith(
-                                  color: AppColors.characterNameWhite,
+                                  
                                 ),
                               ),
                               Text(

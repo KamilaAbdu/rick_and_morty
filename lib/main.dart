@@ -27,29 +27,23 @@ class RickAndMortyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => LocalizationProvider()),
         ChangeNotifierProvider(create: (context) => ThemeProvider()),
       ],
-      child: Consumer<LocalizationProvider>(
-        builder: (context, localizationProvider, child) {
+      child: Consumer2<LocalizationProvider, ThemeProvider>(
+        builder: (context, localizationProvider, themeProvider, child) {
           return MaterialApp.router(
-            locale: localizationProvider.currentLocale, 
-            theme: ThemeProvider() as ThemeData,
-            localizationsDelegates: [
+            debugShowCheckedModeBanner: false,
+            locale: localizationProvider.currentLocale,
+            theme: themeProvider.currentTheme,
+            localizationsDelegates: const [
               L10ns.delegate,
               GlobalMaterialLocalizations.delegate,
               GlobalWidgetsLocalizations.delegate,
               GlobalCupertinoLocalizations.delegate,
             ],
-            supportedLocales: const [
-              Locale('ky'),
-              Locale('en'),
-              Locale('ru'),
-            ],
+            supportedLocales: const [Locale('ky'), Locale('en'), Locale('ru')],
             routerConfig: _appRouter.config(),
-            debugShowCheckedModeBanner: false,
           );
         },
       ),
     );
   }
 }
-
-

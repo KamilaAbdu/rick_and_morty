@@ -37,7 +37,7 @@ class DetailedCharacterInfo extends StatelessWidget {
                   Text(
                     entity.gender ?? '',
                     style: AppTextStyles.s14w400.copyWith(
-                      color: Colors.white,
+                     
                     ),
                   ),
                 ],
@@ -56,7 +56,7 @@ class DetailedCharacterInfo extends StatelessWidget {
                   Text(
                     entity.species ?? '',
                     style: AppTextStyles.s14w400.copyWith(
-                      color: Colors.white,
+                     
                     ),
                   ),
                 ],
@@ -79,7 +79,7 @@ class DetailedCharacterInfo extends StatelessWidget {
                   Text(
                     entity.origin?.name ?? '',
                     style: AppTextStyles.s14w400.copyWith(
-                      color: Colors.white,
+                     
                     ),
                   ),
                 ],
@@ -89,7 +89,7 @@ class DetailedCharacterInfo extends StatelessWidget {
                 onPressed: () {},
                 icon: Icon(
                   Icons.arrow_forward_ios,
-                  color: Colors.white,
+                  
                 ),
               ),
             ],
@@ -110,7 +110,7 @@ class DetailedCharacterInfo extends StatelessWidget {
                   Text(
                     entity.location?.name ?? '',
                     style: AppTextStyles.s14w400.copyWith(
-                      color: Colors.white,
+                     
                     ),
                   ),
                 ],
@@ -120,7 +120,7 @@ class DetailedCharacterInfo extends StatelessWidget {
                 onPressed: () {},
                 icon: Icon(
                   Icons.arrow_forward_ios,
-                  color: Colors.white,
+                  
                 ),
               ),
             ],

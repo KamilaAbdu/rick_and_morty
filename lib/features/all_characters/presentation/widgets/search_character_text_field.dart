@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:rick_and_morty/core/extensions/context_extension.dart';
+import 'package:rick_and_morty/core/provider/theme_provider.dart';
 import 'package:rick_and_morty/core/theme/app_colors.dart';
 import 'package:rick_and_morty/core/theme/app_text_styles.dart';
+import 'package:rick_and_morty/core/theme/app_theme.dart';
 import 'package:rick_and_morty/features/all_characters/presentation/bloc/all_characters_bloc.dart';
 import 'package:rick_and_morty/features/all_characters/presentation/bloc/all_characters_event.dart';
 
@@ -15,15 +18,19 @@ class SearchTextField extends StatelessWidget {
 
   final TextEditingController _textFieldController;
   final AllCharactersBloc _allCharactersBloc;
-  
 
   @override
   Widget build(BuildContext context) {
+    final themeProvider = context.read<ThemeProvider>();
     return Container(
       height: 48,
       width: double.infinity,
       decoration: BoxDecoration(
-        color: AppColors.secondaryDark,
+        color:
+            themeProvider.currentTheme == AppTheme.darkTheme
+                ? AppColors.secondaryDark
+                : AppColors.lightGrey,
+
         borderRadius: BorderRadius.all(Radius.circular(100)),
       ),
       child: Row(
@@ -32,7 +39,10 @@ class SearchTextField extends StatelessWidget {
             child: TextField(
               controller: _textFieldController,
               style: AppTextStyles.s16w400.copyWith(
-                color: AppColors.characterNameWhite,
+                color:
+                    themeProvider.currentTheme == AppTheme.darkTheme
+                        ? Colors.white
+                        : AppColors.secondaryDark,
               ),
               onChanged: (value) {
                 if (value.isEmpty) {

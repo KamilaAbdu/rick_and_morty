@@ -13,7 +13,7 @@ class EpisodesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.mainDark,
+
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         title: Text(

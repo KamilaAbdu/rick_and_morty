@@ -2,11 +2,14 @@ import 'dart:ui';
 
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:rick_and_morty/core/extensions/app_dimens_extension.dart';
 import 'package:rick_and_morty/core/extensions/context_extension.dart';
+import 'package:rick_and_morty/core/provider/theme_provider.dart';
 import 'package:rick_and_morty/core/theme/app_colors.dart';
 import 'package:rick_and_morty/core/theme/app_dimens.dart';
 import 'package:rick_and_morty/core/theme/app_text_styles.dart';
+import 'package:rick_and_morty/core/theme/app_theme.dart';
 import 'package:rick_and_morty/features/all_characters/domain/entity/all_characters_entity.dart';
 import 'package:rick_and_morty/features/character_details/presentation/widgets/character_background_image.dart';
 import 'package:rick_and_morty/features/character_details/presentation/widgets/circle_character_avatar.dart';
@@ -22,10 +25,9 @@ class CharacterDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final mq = MediaQuery.of(context).size;
     final imageSize = mq.width < 500 ? mq.width / 2.1 : mq.width / 3.1;
+    final themeProvider = context.read<ThemeProvider>();
 
     return Scaffold(
-      backgroundColor: AppColors.mainDark,
-
       body: Stack(
         clipBehavior: Clip.none,
         children: [
@@ -52,25 +54,28 @@ class CharacterDetailsScreen extends StatelessWidget {
                 Container(
                   width: double.infinity,
                   height: 2,
-                  decoration: BoxDecoration(color: AppColors.secondaryDark),
+                  decoration: BoxDecoration(
+                    color:
+                        themeProvider.currentTheme == AppTheme.darkTheme
+                            ? AppColors.secondaryDark
+                            : AppColors.lightGrey,
+                  ),
                 ),
                 AppDimens.largePadding.verticalSizedBox,
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: AppDimens.mediumPadding),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: AppDimens.mediumPadding,
+                  ),
                   child: Row(
                     children: [
                       Text(
                         context.lang.characterEpisodes,
-                        style: AppTextStyles.s20w500.copyWith(
-                          color: Colors.white,
-                        ),
+                        style: AppTextStyles.s20w500.copyWith(),
                       ),
                       const Spacer(),
                       Text(
                         context.lang.characterAllEpisodes,
-                        style: AppTextStyles.s12w400.copyWith(
-                          color: AppColors.uiDarkGrey,
-                        ),
+                        style: AppTextStyles.s12w400.copyWith(),
                       ),
                     ],
                   ),

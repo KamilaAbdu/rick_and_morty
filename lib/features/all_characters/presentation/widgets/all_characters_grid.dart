@@ -110,7 +110,7 @@ class _AllCharactersGridState extends State<AllCharactersGrid> {
                   Text(
                     character.name ?? '',
                     style: AppTextStyles.s14w500.copyWith(
-                      color: AppColors.characterNameWhite,
+                     
                     ),
                     textAlign: TextAlign.center,
                   ),

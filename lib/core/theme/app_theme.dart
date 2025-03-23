@@ -4,6 +4,7 @@ import 'package:rick_and_morty/core/theme/app_colors.dart';
 abstract class AppTheme extends ChangeNotifier{
   static final darkTheme = ThemeData(
     scaffoldBackgroundColor: AppColors.mainDark,
+    iconTheme: IconThemeData(color: Colors.white),
     textTheme: TextTheme().copyWith(
       bodySmall: TextStyle(color: Colors.white),
       bodyMedium: TextStyle(color: Colors.white),
@@ -14,12 +15,15 @@ abstract class AppTheme extends ChangeNotifier{
       displaySmall: TextStyle(color: Colors.white),
       displayMedium: TextStyle(color: Colors.white),
       displayLarge: TextStyle(color: Colors.white),
+      
 
     )
   );
 
   static final lightTheme = ThemeData(
     scaffoldBackgroundColor: Colors.white,
+    iconTheme: IconThemeData(color: AppColors.mainDark),
+
     textTheme: TextTheme().copyWith(
       bodySmall: TextStyle(color: AppColors.mainDark,),
       bodyMedium: TextStyle(color: AppColors.mainDark,),

@@ -19,7 +19,7 @@ class MainCharacterInfo extends StatelessWidget {
           child: Text(
             entity.name ?? '',
             style: AppTextStyles.s34w400.copyWith(
-              color: AppColors.characterNameWhite,
+             
             ),
             textAlign: TextAlign.center,
             maxLines: 2,

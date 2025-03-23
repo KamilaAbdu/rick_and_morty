@@ -34,7 +34,6 @@ class _AllCharactersScreenState extends State<AllCharactersScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.mainDark,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(

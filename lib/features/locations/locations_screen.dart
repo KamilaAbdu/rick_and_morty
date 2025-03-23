@@ -13,14 +13,11 @@ class LocationsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.mainDark,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         title: Text(
           'Locations',
-          style: AppTextStyles.s34w400.copyWith(
-            color: AppColors.uiDarkGrey,
-          ),
+          style: AppTextStyles.s34w400.copyWith(color: AppColors.uiDarkGrey),
         ),
       ),
       body: Center(
