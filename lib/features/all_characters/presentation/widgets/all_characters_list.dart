@@ -1,4 +1,4 @@
-import 'dart:developer';
+
 
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +13,7 @@ import 'package:rick_and_morty/features/all_characters/domain/entity/all_charact
 import 'package:rick_and_morty/features/all_characters/presentation/bloc/all_characters_bloc.dart';
 import 'package:rick_and_morty/features/all_characters/presentation/bloc/all_characters_event.dart';
 import 'package:rick_and_morty/features/all_characters/presentation/bloc/all_characters_state.dart';
-import 'package:rick_and_morty/features/character_details/presentation/character_details_screen.dart';
+
 import 'package:rick_and_morty/main.dart';
 
 class AllCharactersList extends StatefulWidget {
