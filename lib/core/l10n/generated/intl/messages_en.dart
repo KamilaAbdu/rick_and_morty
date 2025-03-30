@@ -30,6 +30,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "appVersion": MessageLookupByLibrary.simpleMessage("App version"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+    "changeLocale": MessageLookupByLibrary.simpleMessage("Language"),
     "changeTheme": MessageLookupByLibrary.simpleMessage("Appearance"),
     "changeUserAvatar": MessageLookupByLibrary.simpleMessage("Change photo"),
     "changeUserName": MessageLookupByLibrary.simpleMessage("Change full name"),

@@ -45,5 +45,7 @@
   "characterGenderMan": "Male",
   "characterGenderWoman": "Female",
   "characterNoGender": "Genderless",
-  "filterCharacterNoResults": "No results found with these filters"
+  "filterCharacterNoResults": "No results found with these filters",
+  "changeLocale": "Language"
+
 }

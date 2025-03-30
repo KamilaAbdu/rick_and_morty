@@ -5,10 +5,10 @@ import 'package:rick_and_morty/core/extensions/context_extension.dart';
 import 'package:rick_and_morty/core/provider/theme_provider.dart';
 import 'package:rick_and_morty/core/theme/app_colors.dart';
 import 'package:rick_and_morty/core/theme/app_dimens.dart';
-
 import 'package:rick_and_morty/core/theme/app_text_styles.dart';
 import 'package:rick_and_morty/core/theme/app_theme.dart';
 import 'package:rick_and_morty/features/settings/widgets/about_app.dart';
+import 'package:rick_and_morty/features/settings/widgets/localization_changer.dart';
 import 'package:rick_and_morty/features/settings/widgets/theme_change.dart';
 import 'package:rick_and_morty/features/settings/widgets/user_info.dart';
 
@@ -42,6 +42,8 @@ class SettingsScreen extends StatelessWidget {
             UserInfo(),
             SizedBox(height: 36),
             ThemeChange(),
+            SizedBox(height: 36),
+            LocalizationChanger(),
             SizedBox(height: 36),
             AboutApp(),
           ],

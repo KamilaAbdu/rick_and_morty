@@ -16,63 +16,63 @@ class UserInfo extends StatelessWidget {
     final themeProvider = context.read<ThemeProvider>();
 
     return Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
           children: [
-            Row(
+            SizedBox(height: 80, width: 80, child: CircleAvatar()),
+            AppDimens.mediumPadding.horizontalSizedBox,
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 80, width: 80, child: CircleAvatar()),
-                AppDimens.mediumPadding.horizontalSizedBox,
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('Oleg Belotserkovsky', style: AppTextStyles.s16w400),
-                    AppDimens.smallPadding.verticalSizedBox,
-                    Text(
-                      'Morty',
-                      style: AppTextStyles.s14w400.copyWith(
-                        color: AppColors.uiDarkGrey,
-                      ),
-                    ),
-                  ],
+                Text('Oleg Belotserkovsky', style: AppTextStyles.s16w400),
+                AppDimens.smallPadding.verticalSizedBox,
+                Text(
+                  'Morty',
+                  style: AppTextStyles.s14w400.copyWith(
+                    color: AppColors.uiDarkGrey,
+                  ),
                 ),
               ],
             ),
-            SizedBox(height: 30),
-            SizedBox(
-              height: 40,
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ButtonStyle(
-                  backgroundColor: WidgetStateProperty.all(Colors.transparent),
-                  elevation: WidgetStateProperty.all(0),
-                  side: WidgetStateProperty.all(
-                    BorderSide(color: AppColors.uiDarkBlue),
-                  ),
-                  shape: WidgetStateProperty.all(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  ),
-                ),
-                child: Text(
-                  context.lang.edit,
-                  style: AppTextStyles.s16w400.copyWith(
-                    color: AppColors.uiDarkBlue,
-                  ),
-                ),
+          ],
+        ),
+        SizedBox(height: 30),
+        SizedBox(
+          height: 40,
+          width: double.infinity,
+          child: ElevatedButton(
+            onPressed: () {},
+            style: ButtonStyle(
+              backgroundColor: WidgetStateProperty.all(Colors.transparent),
+              elevation: WidgetStateProperty.all(0),
+              side: WidgetStateProperty.all(
+                BorderSide(color: AppColors.uiDarkBlue),
+              ),
+              shape: WidgetStateProperty.all(
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
               ),
             ),
-            SizedBox(height: 32),
-            Container(
-              width: double.infinity,
-              height: 2,
-              decoration: BoxDecoration(
-                color:
-                    themeProvider.currentTheme == AppTheme.darkTheme
-                        ? AppColors.secondaryDark
-                        : AppColors.lightGrey,
+            child: Text(
+              context.lang.edit,
+              style: AppTextStyles.s16w400.copyWith(
+                color: AppColors.uiDarkBlue,
               ),
-            ),]);
+            ),
+          ),
+        ),
+        SizedBox(height: 32),
+        Container(
+          width: double.infinity,
+          height: 2,
+          decoration: BoxDecoration(
+            color:
+                themeProvider.currentTheme == AppTheme.darkTheme
+                    ? AppColors.secondaryDark
+                    : AppColors.lightGrey,
+          ),
+        ),
+      ],
+    );
   }
 }

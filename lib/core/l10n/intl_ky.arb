@@ -45,5 +45,7 @@
   "characterGenderMan": "Эркек",
   "characterGenderWoman": "Аял",
   "characterNoGender": "Жынысы жок",
-  "filterCharacterNoResults": "Бул фильтрлер боюнча эч нерсе табылган жок"
+  "filterCharacterNoResults": "Бул фильтрлер боюнча эч нерсе табылган жок",
+  "changeLocale": "Тиркеме тили"
+
 }

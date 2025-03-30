@@ -424,6 +424,11 @@ class L10ns {
       args: [],
     );
   }
+
+  /// `Language`
+  String get changeLocale {
+    return Intl.message('Language', name: 'changeLocale', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<L10ns> {

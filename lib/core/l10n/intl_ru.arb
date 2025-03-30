@@ -45,7 +45,8 @@
     "characterGenderMan": "Мужской",
     "characterGenderWoman": "Женский",
     "characterNoGender": "Бесполый",
-    "filterCharacterNoResults": "По данным фильтра ничего не найдено"
+    "filterCharacterNoResults": "По данным фильтра ничего не найдено",
+    "changeLocale": "Язык приложениия"
 
 
 }

@@ -30,6 +30,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "appVersion": MessageLookupByLibrary.simpleMessage("Тиркеменин версиясы"),
     "cancel": MessageLookupByLibrary.simpleMessage("Жокко чыгаруу"),
+    "changeLocale": MessageLookupByLibrary.simpleMessage("Тиркеме тили"),
     "changeTheme": MessageLookupByLibrary.simpleMessage("Тема"),
     "changeUserAvatar": MessageLookupByLibrary.simpleMessage(
       "Сүрөттү өзгөртүү",
