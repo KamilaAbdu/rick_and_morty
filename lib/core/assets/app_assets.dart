@@ -9,5 +9,7 @@ class AppAssets {
 
 
   static const String noData = 'lib/core/assets/images/no_data.png';
+  static const String noFilteredData = 'lib/core/assets/images/no_data.png';
+
 
 }

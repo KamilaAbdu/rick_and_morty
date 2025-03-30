@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:provider/provider.dart';
 import 'package:rick_and_morty/core/l10n/generated/l10n.dart';
+import 'package:rick_and_morty/core/provider/filter_provider.dart';
 import 'package:rick_and_morty/core/provider/theme_provider.dart';
 import 'package:rick_and_morty/core/service/auto_router.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -26,6 +27,8 @@ class RickAndMortyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (context) => LocalizationProvider()),
         ChangeNotifierProvider(create: (context) => ThemeProvider()),
+        ChangeNotifierProvider(create: (context) => FilterProvider()),
+
       ],
       child: Consumer2<LocalizationProvider, ThemeProvider>(
         builder: (context, localizationProvider, themeProvider, child) {

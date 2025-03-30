@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rick_and_morty/core/enums/state_status.dart';
 import 'package:rick_and_morty/core/extensions/app_dimens_extension.dart';
 import 'package:rick_and_morty/core/extensions/context_extension.dart';
+import 'package:rick_and_morty/core/provider/filter_provider.dart';
 import 'package:rick_and_morty/core/theme/app_colors.dart';
 import 'package:rick_and_morty/core/theme/app_dimens.dart';
 import 'package:rick_and_morty/core/theme/app_text_styles.dart';
@@ -33,6 +34,7 @@ class _AllCharactersScreenState extends State<AllCharactersScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final filterProvider = context.watch<FilterProvider>();
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -52,6 +54,37 @@ class _AllCharactersScreenState extends State<AllCharactersScreen> {
                   child: BlocBuilder<AllCharactersBloc, AllCharactersState>(
                     builder: (context, state) {
                       if (state.status == StateStatus.loaded) {
+                        var characters = state.model?.results ?? [];
+
+                        // apply filters
+                        if (filterProvider.selectedStatuses.isNotEmpty) {
+                          characters =
+                              characters
+                                  .where(
+                                    (c) => filterProvider.selectedStatuses
+                                        .contains(c.status),
+                                  )
+                                  .toList();
+                        }
+                        if (filterProvider.selectedGenders.isNotEmpty) {
+                          characters =
+                              characters
+                                  .where(
+                                    (c) => filterProvider.selectedGenders
+                                        .contains(c.gender),
+                                  )
+                                  .toList();
+                        }
+                        if (!filterProvider.sortByAlphabet) {
+                          characters.sort(
+                            (a, b) => (b.name ?? '').compareTo(a.name ?? ''),
+                          );
+                        } else {
+                          characters.sort(
+                            (a, b) => (a.name ?? '').compareTo(b.name ?? ''),
+                          );
+                        }
+
                         return Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [

@@ -64,6 +64,22 @@ class CharacterDetailsRouteArgs {
 }
 
 /// generated route for
+/// [CharacterFilterScreen]
+class CharacterFilterRoute extends PageRouteInfo<void> {
+  const CharacterFilterRoute({List<PageRouteInfo>? children})
+    : super(CharacterFilterRoute.name, initialChildren: children);
+
+  static const String name = 'CharacterFilterRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const CharacterFilterScreen();
+    },
+  );
+}
+
+/// generated route for
 /// [EpisodesScreen]
 class EpisodesRoute extends PageRouteInfo<void> {
   const EpisodesRoute({List<PageRouteInfo>? children})
